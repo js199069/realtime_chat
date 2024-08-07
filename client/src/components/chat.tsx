@@ -32,10 +32,10 @@ function Chat() {
     const divRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if(divRef.current)
-      divRef.current.scrollIntoView({  behavior: "smooth", block: "end" });
+        if (divRef.current)
+            divRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
     });
-    
+
     return (
         <div className="flex justify-center items-center w-full h-screen bg-gradient-to-b from-green-300 to-green-200">
             <div className="bg-white rounded-lg w-96 h-96 p-4 shadow-md">
@@ -55,7 +55,7 @@ function Chat() {
                             </div>
                         ))}
                         <div id={'el'} ref={divRef}>
-       </div>
+                        </div>
                     </div>
                     <div className="p-2 border-t border-gray-300">
                         <div className="flex">
