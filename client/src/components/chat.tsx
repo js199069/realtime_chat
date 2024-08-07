@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 
 const socket = io("http://localhost:4000"); // Replace with your server address
@@ -29,15 +29,22 @@ function Chat() {
         }
     };
 
+    const divRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if(divRef.current)
+      divRef.current.scrollIntoView({  behavior: "smooth", block: "end" });
+    });
+    
     return (
-        <div className="flex justify-center items-center w-full h-screen bg-gradient-to-b from-blue-300 to-blue-200">
+        <div className="flex justify-center items-center w-full h-screen bg-gradient-to-b from-green-300 to-green-200">
             <div className="bg-white rounded-lg w-96 h-96 p-4 shadow-md">
                 <div className="flex flex-col h-full">
-                    <div className="flex-1 p-2 overflow-y-auto bg-gray-100 rounded-md">
+                    <div className="flex-1 p-2 overflow-y-auto bg-gray-100 rounded-md" >
                         {messages.map((msg: any, index: number) => (
-                            <div key={index} className="flex flex-col items-start">
+                            <div key={index} className="flex flex-col items-start mt-2">
                                 <div
-                                    className="bg-blue-500 
+                                    className="bg-green-500 
                    text-white p-2 rounded-md"
                                 >
                                     {msg.text}
@@ -47,6 +54,8 @@ function Chat() {
                                 </span>
                             </div>
                         ))}
+                        <div id={'el'} ref={divRef}>
+       </div>
                     </div>
                     <div className="p-2 border-t border-gray-300">
                         <div className="flex">
@@ -58,7 +67,7 @@ function Chat() {
                                 onChange={(e) => setMessageInput(e.target.value)}
                             />
                             <button
-                                className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
+                                className="px-4 py-2 bg-green-500 text-white rounded-r-md hover:bg-green-600"
                                 onClick={sendMessage}
                             >
                                 Send
