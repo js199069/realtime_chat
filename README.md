@@ -10,4 +10,4 @@ node app.js > to start server.
 
 now you can chat with 2 browser tab and realtime mesages.
 
-![Alt text](src/assets/test.png)
+![Alt text](client/src/assets/test.png)
