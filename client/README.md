@@ -1,12 +1,3 @@
-# real time chat with socket IO
-
-first install npm packages in client and server folder. then run apps. \n
-
-npm run dev > to start client. \n
-node app.js > to start server. \n
-
-now you can chat with 2 browser tab and realtime mesages.
-
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

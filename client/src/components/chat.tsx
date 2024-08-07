@@ -8,8 +8,6 @@ function Chat() {
     const [messageInput, setMessageInput] = useState("");
 
     useEffect(() => {
-        // Socket.IO event listeners
-
         // Listen for incoming messages
         socket.on("message", (message) => {
             setMessages([...messages, message]);
