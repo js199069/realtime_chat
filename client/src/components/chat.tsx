@@ -41,10 +41,7 @@ function Chat() {
                     <div className="flex-1 p-2 overflow-y-auto bg-gray-100 rounded-md" >
                         {messages.map((msg: any, index: number) => (
                             <div key={index} className="flex flex-col items-start mt-2">
-                                <div
-                                    className="bg-green-500 
-                   text-white p-2 rounded-md"
-                                >
+                                <div className="bg-green-500 text-white p-2 rounded-md">
                                     {msg.text}
                                 </div>
                                 <span className="text-gray-500 text-xs">
